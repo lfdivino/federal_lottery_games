@@ -1,0 +1,12 @@
+bin/
+include/
+lib/
+env/
+.pytest_cache/
+pip-selfcheck.json
+share/
+.idea/
+*.json
+__pycache__
+geckodriver.log
+erlang-solutions_1.0_all.deb
