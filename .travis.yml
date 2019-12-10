@@ -1,0 +1,32 @@
+language: python
+python:
+  - 3.7
+
+stages:
+  - adequation
+  - test
+
+before_install:
+  - python -m pip install -U pip
+  - apt update
+  - apt upgrade
+
+install:
+  - python -m pip install -r requirements.txt
+  - pip install coveralls
+  - pip install .
+
+
+jobs:
+  include:
+    - stage: adequation
+      script:
+        - pip install pycodestyle pydocstyle
+        - pycodestyle lottery-provider
+        - pydocstyle lottery-provider
+    - stage: test
+      script:
+        - coverage run api_888_interview/test/test_event.py
+
+after_success:
+  - coveralls
