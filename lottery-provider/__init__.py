@@ -1,2 +1,1 @@
-from . import src
-from . import tests
+from . import app

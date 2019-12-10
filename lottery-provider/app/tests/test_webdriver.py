@@ -1,4 +1,4 @@
-from ..src.webdriver import Webdriver
+from app.src.webdriver import Webdriver
 from selenium.webdriver.common.keys import Keys
 
 
@@ -13,7 +13,7 @@ class TestWebdriver():
     def test_url_connection(self):
         webdriver = Webdriver()
 
-        webdriver.driver.get('http://www.yahoo.com')
+        webdriver.get_lottery_game_webpage('mega-sena')
         assert 'Yahoo' in webdriver.driver.title
 
         webdriver.driver.close()
