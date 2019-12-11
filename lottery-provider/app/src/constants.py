@@ -2,5 +2,6 @@
 
 GAMES_URL = {
     'mega-sena':
-        'http://www.loterias.caixa.gov.br/wps/portal/loterias/landing/megasena',
+        'http://www.loterias.caixa.gov.br/wps/portal/'
+        'loterias/landing/megasena',
 }

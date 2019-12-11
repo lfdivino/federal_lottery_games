@@ -23,10 +23,12 @@ class TestWebdriver():
 
         webdriver.driver.get('http://www.yahoo.com')
 
-        elem = webdriver.driver.find_element_by_id('uh-search-box')# Find the search box
+        # Find the search box
+        elem = webdriver.driver.find_element_by_id('uh-search-box')
         elem.send_keys('seleniumhq' + Keys.RETURN)
 
-        result_not_found = webdriver.driver.find_element_by_class_name('first last')
+        result_not_found = webdriver.driver.find_element_by_class_name(
+            'first last')
         assert not result_not_found
 
         webdriver.driver.close()

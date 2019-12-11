@@ -14,4 +14,3 @@ class Webdriver(object):
             self.driver.get(GAMES_URL[game])
         except AttributeError as e:
             raise Warning('Incorrect Game Name!')
-
