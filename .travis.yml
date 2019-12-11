@@ -1,0 +1,29 @@
+language: python
+python:
+  - 3.7
+
+stages:
+  - adequation
+  - test
+
+before_install:
+  - python -m pip install -U pip
+
+install:
+  - python -m pip install -r requirements.txt
+  - pip install coveralls
+
+
+jobs:
+  include:
+    - stage: adequation
+      script:
+        - pip install pycodestyle pydocstyle
+        - pycodestyle lottery-provider
+        - pydocstyle lottery-provider
+    - stage: test
+      script:
+        - coverage run lottery-provider/app/tests/test_webdriver.py
+
+after_success:
+  - coveralls
